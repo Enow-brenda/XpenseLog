@@ -104,7 +104,7 @@ class SignupForm(ft.Column):  # Changed from UserControl to Column
             self.controls.insert(2, self.error_box)
             self.update()
         else:
-            self.page.db.add_user(self.email.value,self.username.value,self.password.value)
+            self.page.db.add_user(self.username.value,self.email.value,self.password.value)
             self.error_box.content.value = ""
             self.controls.pop(2)
             self.show_dialog()

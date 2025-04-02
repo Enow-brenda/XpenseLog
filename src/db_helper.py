@@ -25,6 +25,9 @@ class DatabaseHelper:
         cursor = conn.cursor()
         cursor.execute(query, params)
         conn.commit()
+
+        cursor.execute("VACUUM;")
+        conn.commit()
         print(f'{query} executed successively');
         conn.close()
 

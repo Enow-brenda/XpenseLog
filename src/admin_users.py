@@ -297,7 +297,7 @@ class AUsersPage(ft.Column):
             self.show_dialog_new("Success", "User Added Successively.", False)
 
     def show_dialog_new(self, title: str, description: str, is_error: bool = False):
-        if self.page.dialog:
+        if hasattr(self.page, 'dialog') and self.page.dialog.open:
             self.page.dialog.open = False
         color = ft.Colors.GREEN_400
         if is_error:
